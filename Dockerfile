@@ -25,4 +25,4 @@ RUN find . -name requirements.txt -exec pip install -r {} \;
 COPY . .
 
 # 执行主程序
-CMD ["python3", "main.py"]
+CMD ["python3", "main.py", COMMANDLINE_ARGS]
