@@ -1,8 +1,13 @@
 services:
   comfyui:
-    build: .
+    # build: .
+    image: jyyqaj/comfyui:latest
     ports:
-      - "8188:8188"
+      - "8188:6006"
+    volumes:
+      - ./models:/app/models
+    environment:
+      - COMMANDLINE_ARGS=--port 6006 --listen
     deploy:
       resources:
         reservations:
